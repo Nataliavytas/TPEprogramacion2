@@ -20,7 +20,15 @@ public class Camion {
 		return capacidad;
 	}
 	
-	public void addAnimales(ArrayList animalesAgregar){
-		animales.addAll(animalesAgregar);
+	public void addAnimal(Animal animalAgregar){
+		if(condicion.cumple(animalAgregar)&&(animales.size()<capacidad)){
+			
+			animales.add(animalAgregar);
+			animalAgregar.deleteAnimal();
+		}
+	}
+	
+	public boolean isFull(){
+		return animales.size()>=capacidad;
 	}
 }

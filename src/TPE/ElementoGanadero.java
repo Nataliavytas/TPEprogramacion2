@@ -11,6 +11,7 @@ public interface ElementoGanadero {
 	
 	public abstract double getPeso();
 	
-	public abstract ArrayList getAnimalesAptos(Condicion c, int capacidad);
+	public abstract ArrayList<Animal> getAnimalesAptos(Condicion c);
 	
+	public abstract void llenarCamion(Camion c);
 }

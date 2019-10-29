@@ -1,11 +1,22 @@
 package TPE;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class GrupoGanadero implements ElementoGanadero{
 
+	private String nombre;
 	private ArrayList<ElementoGanadero> elementos;
 	
+	
+	public GrupoGanadero(String n){
+		nombre = n;
+		elementos = new ArrayList<>();
+	}
+	
+	public void addElementoGanadero(ElementoGanadero e){
+		elementos.add(e);
+	}
 	
 	public int getCantidadAnimales() {
 		int cantidad = 0;
@@ -39,32 +50,24 @@ public class GrupoGanadero implements ElementoGanadero{
 		return pesoTotal/cantidad; 
 	}
 
-	public ArrayList getAnimalesAptos(Condicion c, int capacidad ) {
+	public ArrayList<Animal> getAnimalesAptos(Condicion c ) {
 		ArrayList<Animal> animalesAptos = new ArrayList<Animal>();
 		
-		for(ElementoGanadero e:elementos){
-			ArrayList<Animal> aux = new ArrayList<Animal>();
-			getAnimalesAptos(c, capacidad);
-			animalesAptos.addAll(aux);
-				if(animalesAptos.size()==capacidad){
-					break;
-				}
+		for(ElementoGanadero el:elementos){
+				ArrayList<Animal> aux = el.getAnimalesAptos(c);
+				animalesAptos.addAll(aux);
 		}
 		return animalesAptos;
-		
 	} 
 	
 	public void llenarCamion(Camion f){
 	
-		Condicion c = f.getCondicion();
-		int capacidad = f.getCapacidad();
-		
-		ArrayList<Animal> animalesAptos = getAnimalesAptos(c, capacidad);
-		
-		f.addAnimales(animalesAptos);
-	}
-		
-		
+		Iterator<ElementoGanadero> it = elementos.iterator();
+		while (it.hasNext() && !f.isFull()){
+			ElementoGanadero e1 = it.next();
+			e1.llenarCamion(f);
+		}
+	
 	}
 	
 	public void deleteAnimal(Animal a){
