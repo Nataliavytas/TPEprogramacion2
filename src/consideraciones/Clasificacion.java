@@ -1,4 +1,5 @@
-package TPE;
+package consideraciones;
+import sistemaGanadero.Animal;
 
 public class Clasificacion{
 

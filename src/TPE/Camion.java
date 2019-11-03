@@ -2,6 +2,9 @@ package TPE;
 
 import java.util.ArrayList;
 
+import consideraciones.Condicion;
+import sistemaGanadero.Animal;
+
 public class Camion {
 	private int capacidad; 
 	Condicion condicion;

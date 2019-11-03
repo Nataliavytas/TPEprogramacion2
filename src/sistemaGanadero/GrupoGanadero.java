@@ -1,7 +1,10 @@
-package TPE;
-
+package sistemaGanadero;
+import TPE.Camion;
+import consideraciones.Condicion;
 import java.util.ArrayList;
 import java.util.Iterator;
+
+
 
 public class GrupoGanadero implements ElementoGanadero{
 
@@ -50,14 +53,20 @@ public class GrupoGanadero implements ElementoGanadero{
 		return pesoTotal/cantidad; 
 	}
 
-	public ArrayList<Animal> getAnimalesAptos(Condicion c ) {
-		ArrayList<Animal> animalesAptos = new ArrayList<Animal>();
+	public ArrayList<ElementoGanadero> buscar(Condicion c ) {
+		ArrayList<ElementoGanadero> aux = new ArrayList<ElementoGanadero>();
 		
 		for(ElementoGanadero el:elementos){
-				ArrayList<Animal> aux = el.getAnimalesAptos(c);
-				animalesAptos.addAll(aux);
+			if(el.buscar(c)!= null) {
+				aux.add(el);
+			}
 		}
-		return animalesAptos;
+		return aux;
+	}
+	public boolean puedeVender(Condicion c ) {
+		ArrayList<ElementoGanadero> puede = buscar(c);
+		
+		return puede.size() == elementos.size();		
 	} 
 	
 	public void llenarCamion(Camion f){
@@ -72,6 +81,10 @@ public class GrupoGanadero implements ElementoGanadero{
 	
 	public void deleteAnimal(Animal a){
 		elementos.remove(a);
+	}
+	
+	public String getNombre() {
+		return nombre;
 	}
 
 }

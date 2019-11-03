@@ -2,6 +2,10 @@ package TPE;
 
 import java.util.ArrayList;
 
+import consideraciones.Clasificacion;
+import sistemaGanadero.Animal;
+import sistemaGanadero.ElementoGanadero;
+
 public class SistemaGanadero {
 	
 	ArrayList<Camion> camiones;

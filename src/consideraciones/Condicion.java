@@ -1,4 +1,6 @@
-package TPE;
+package consideraciones;
+
+import sistemaGanadero.Animal;
 
 public interface Condicion {
 
