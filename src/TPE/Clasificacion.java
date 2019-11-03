@@ -1,4 +1,5 @@
-package consideraciones;
+package TPE;
+import condicionesAnimal.Condicion;
 import sistemaGanadero.Animal;
 
 public class Clasificacion{

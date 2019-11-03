@@ -3,7 +3,7 @@ package sistemaGanadero;
 import java.util.ArrayList;
 
 import TPE.Camion;
-import consideraciones.Condicion;
+import condicionesAnimal.Condicion;
 
 	public class Animal implements ElementoGanadero{
 	

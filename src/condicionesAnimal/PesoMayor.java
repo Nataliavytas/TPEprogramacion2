@@ -1,4 +1,4 @@
-package consideraciones;
+package condicionesAnimal;
 
 import sistemaGanadero.Animal;
 
