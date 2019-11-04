@@ -57,19 +57,7 @@ import java.util.Iterator;
 			g.cumple(this);
 		}
 	
-		public ArrayList<ElementoGanadero> buscar(Condicion c ) {
-			ArrayList<ElementoGanadero> aux = new ArrayList<ElementoGanadero>();
-			
-			for(ElementoGanadero el:elementos){
-				if(el.buscar(c)!= null) {
-					aux.add(el);
-				}
-			}
-			return aux;
-		}
 		public boolean puedeVender(Condicion c ) {
-			ArrayList<ElementoGanadero> puede = buscar(c);
-			
 			return puede.size() == elementos.size();		
 		} 
 		

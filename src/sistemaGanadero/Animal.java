@@ -57,14 +57,14 @@ import condicionesAnimal.Condicion;
 			return raza;
 		}
 		public boolean isCapado() {
-			if(genero == "hembra")
+			if(genero.equalsIgnoreCase("hembra"))
 				return false;
 			else {
 				return capado;
 			}
 		}
 		public int getPariciones() {
-			if(genero == "macho")
+			if(genero.equalsIgnoreCase("macho"))
 				return 0;
 			else {
 				return pariciones;
