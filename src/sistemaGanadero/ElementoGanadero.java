@@ -1,8 +1,7 @@
 package sistemaGanadero;
 
-import java.util.ArrayList;
+
 import TPE.Camion;
-import condicionesAnimal.Condicion;
 
 	public interface ElementoGanadero {
 	
@@ -14,7 +13,6 @@ import condicionesAnimal.Condicion;
 		public abstract double getPeso();
 		
 		public abstract void llenarCamion(Camion c);
-	
-		public abstract ArrayList<ElementoGanadero> buscar(Condicion c);
+
 		
 	}

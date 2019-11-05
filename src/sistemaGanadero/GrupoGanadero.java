@@ -1,8 +1,6 @@
 package sistemaGanadero;
 import TPE.Camion;
-import condicionesAnimal.Condicion;
 import condicionesGrupales.CondicionGrupal;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -19,6 +17,7 @@ import java.util.Iterator;
 		
 		public void addElementoGanadero(ElementoGanadero e){
 			elementos.add(e);
+			
 		}
 		
 		public int getCantidadAnimales() {
@@ -53,12 +52,9 @@ import java.util.Iterator;
 			return pesoTotal/cantidad; 
 		}
 		
-		public void buscarPorGrupo(CondicionGrupal g) { //medio que aca me hace agua, tengo que ver como hacerlo mejor
-			g.cumple(this);
-		}
-	
-		public boolean puedeVender(Condicion c ) {
-			return puede.size() == elementos.size();		
+			
+		public boolean puedeVender(CondicionGrupal g) {
+			return 	g.cumple(this);
 		} 
 		
 		public void llenarCamion(Camion f){
@@ -68,7 +64,6 @@ import java.util.Iterator;
 				ElementoGanadero e1 = it.next();
 				e1.llenarCamion(f);
 			}
-		
 		}
 		
 		public void deleteAnimal(Animal a){

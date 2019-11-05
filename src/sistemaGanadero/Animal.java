@@ -16,7 +16,23 @@ import condicionesAnimal.Condicion;
 			private int pariciones;
 			private String genero;
 		
+		public Animal(int i, int ed, double pe, String rz, boolean ca, String ge ) {
+			id = i; 
+			edad = ed;
+			peso =pe;
+			raza=rz;
+			capado =ca;
+			genero = ge;
+		}
 		
+		public Animal(int i, int ed, double pe, String rz, int par, String ge ) {
+			id = i; 
+			edad = ed;
+			peso =pe;
+			raza=rz;
+			pariciones = par;
+			genero = ge;
+		}
 		
 				
 		public int getPromedioEdad() {
