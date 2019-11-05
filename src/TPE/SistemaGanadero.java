@@ -6,6 +6,7 @@ import condicionesAnimal.Condicion;
 import condicionesAnimal.EdadMayor;
 import sistemaGanadero.Animal;
 import sistemaGanadero.ElementoGanadero;
+import sistemaGanadero.GrupoGanadero;
 
 public class SistemaGanadero {
 	
@@ -22,14 +23,31 @@ public class SistemaGanadero {
 	public static void main(String[] args) {
 		
 		SistemaGanadero SistemaGanadero = new SistemaGanadero();
+
+		Animal vaca1 = new Animal(1, 2, 5 , "Argentina", false, "male" );
+		Animal vaca2 = new Animal(2, 3, 4, "Hereford", 5, "female");
+		Animal vaca3 = new Animal(3, 1, 2, "Abardeen", false, "male");
+		Animal vaca4 = new Animal (4, 5, 7, "Argentina", 6, "female");
+		Animal vaca5 = new Animal (5, 5, 7.5, "Argentina", 6, "female");
 		
-		Animal vaca1 = new Animal();
+		GrupoGanadero rodeo1 = new GrupoGanadero("Rodeo");
 		
-		int minEdad = 2;
-		int capacidad1 = 3;
-		Condicion edadMayorA = new EdadMayor(minEdad );
-		Camion camion1 = new Camion(capacidad1, edadMayorA ); 
+		rodeo1.addElementoGanadero(vaca1);
+		rodeo1.addElementoGanadero(vaca2);
+		rodeo1.addElementoGanadero(vaca3);
+		rodeo1.addElementoGanadero(vaca4);
 		
+		GrupoGanadero estancia = new GrupoGanadero("Estancia");
+		estancia.addElementoGanadero(rodeo1);
+		estancia.addElementoGanadero(vaca5);
+		
+		
+		
+		Condicion edadMayorA = new EdadMayor(2 );
+		Camion camion1 = new Camion(2, edadMayorA); 
+		
+		estancia.llenarCamion(camion1);
+		System.out.println(camion1.animales.get(1));
 
 		
 

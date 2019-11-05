@@ -7,8 +7,8 @@ import sistemaGanadero.Animal;
 
 public class Camion {
 	private int capacidad; 
-	Condicion condicion;
-	ArrayList<Animal> animales;
+	private Condicion condicion;
+	public ArrayList<Animal> animales;
 	
 	public Camion (int ca, Condicion co){
 		capacidad = ca;

@@ -13,6 +13,6 @@ import TPE.Camion;
 		public abstract double getPeso();
 		
 		public abstract void llenarCamion(Camion c);
-
+		
 		
 	}

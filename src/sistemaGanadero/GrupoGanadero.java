@@ -30,15 +30,15 @@ import java.util.Iterator;
 	
 		public int getPromedioEdad() {
 			int sumaEdades = 0;
-			for(int i=0; i<elementos.size();i++){
-				sumaEdades+= elementos.get(i).getPromedioEdad();
+			for(ElementoGanadero e: elementos){
+				sumaEdades+= e.getPromedioEdad();
 			}
 			int cantidad = this.getCantidadAnimales();
 			return sumaEdades/cantidad;
 		}
 	
 		public double getPeso() {
-			int pesoTotal = 0; 
+			double pesoTotal = 0; 
 			for(int i=0; i<elementos.size(); i++){
 				pesoTotal += elementos.get(i).getPeso();
 			}
