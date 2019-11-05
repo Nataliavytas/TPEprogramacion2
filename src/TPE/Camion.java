@@ -13,6 +13,7 @@ public class Camion {
 	public Camion (int ca, Condicion co){
 		capacidad = ca;
 		condicion = co; 
+		animales = new ArrayList<Animal>();
 	}
 	
 	public Condicion getCondicion(){

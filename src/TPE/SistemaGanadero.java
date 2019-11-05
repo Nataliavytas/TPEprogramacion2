@@ -47,9 +47,7 @@ public class SistemaGanadero {
 		Camion camion1 = new Camion(2, edadMayorA); 
 		
 		estancia.llenarCamion(camion1);
-		System.out.println(camion1.animales.get(1));
-
-		
+		System.out.println(camion1.animales.get(0));
 
 		
 	}
