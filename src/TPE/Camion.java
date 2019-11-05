@@ -13,6 +13,7 @@ public class Camion {
 	public Camion (int ca, Condicion co){
 		capacidad = ca;
 		condicion = co; 
+		animales = new ArrayList<Animal>();
 	}
 	
 	public Condicion getCondicion(){
@@ -33,5 +34,11 @@ public class Camion {
 	
 	public boolean isFull(){
 		return animales.size()>=capacidad;
+	}
+	
+	public void printArray(){
+		for(Animal a:animales){
+			System.out.print(a.getId());
+		}
 	}
 }
