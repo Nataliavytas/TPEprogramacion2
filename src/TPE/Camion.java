@@ -35,4 +35,10 @@ public class Camion {
 	public boolean isFull(){
 		return animales.size()>=capacidad;
 	}
+	
+	public void printArray(){
+		for(Animal a:animales){
+			a.toString();
+		}
+	}
 }

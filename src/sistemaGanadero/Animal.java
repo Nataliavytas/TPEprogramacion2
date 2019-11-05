@@ -87,4 +87,8 @@ import condicionesAnimal.Condicion;
 			}	
 		}
 		
+		public String toString() {
+			return "animal :" + id;
+		}
+		
 	}
