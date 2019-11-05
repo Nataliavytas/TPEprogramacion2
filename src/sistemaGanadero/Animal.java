@@ -11,7 +11,6 @@ import condicionesAnimal.Condicion;
 			private int edad; 
 			private double peso; 
 			private String raza; 
-			private GrupoGanadero padre;
 			private boolean capado; 
 			private int pariciones;
 			private String genero;
@@ -33,8 +32,7 @@ import condicionesAnimal.Condicion;
 			pariciones = par;
 			genero = ge;
 		}
-		
-				
+
 		public int getPromedioEdad() {
 			return edad;
 		}
@@ -44,10 +42,7 @@ import condicionesAnimal.Condicion;
 		}
 		
 		public void llenarCamion(Camion c){
-		}
-		
-		public void deleteAnimal(){
-			padre.deleteAnimal(this);
+			c.addAnimal(this);
 		}
 		
 		public int getCantidadAnimales() {
@@ -85,6 +80,37 @@ import condicionesAnimal.Condicion;
 			else {
 				return pariciones;
 			}	
+		}
+
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + id;
+			return result;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			Animal other = (Animal) obj;
+			if (id != other.id)
+				return false;
+			return true;
+		}
+
+		@Override
+		public boolean deleteAnimales(Animal a) {
+			return false;
+		}
+		
+		public void printArray(){
+			System.out.println(id + " ");
 		}
 		
 	}

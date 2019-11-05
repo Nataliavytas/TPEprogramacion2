@@ -13,6 +13,10 @@ import TPE.Camion;
 		public abstract double getPeso();
 		
 		public abstract void llenarCamion(Camion c);
+
+		public abstract boolean deleteAnimales(Animal a);
+
+		public abstract void printArray();
 		
 		
 	}

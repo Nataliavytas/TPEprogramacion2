@@ -14,7 +14,7 @@ public class Clasificacion{
 	
 	public String getClasificacion(Animal a){
 		if(condicion.cumple(a)){
-			return clasificacion; 
+			return clasificacion + " "; 
 		}else{
 			return "";
 		}

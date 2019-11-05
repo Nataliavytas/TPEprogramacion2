@@ -7,6 +7,8 @@ import condicionesAnimal.EdadMayor;
 import condicionesAnimal.Genero;
 import condicionesAnimal.PesoMayor;
 import condicionesAnimal.Raza;
+import condicionesGrupales.CondicionGrupal;
+import condicionesGrupales.PromedioPesoMayor;
 import sistemaGanadero.Animal;
 import sistemaGanadero.ElementoGanadero;
 import sistemaGanadero.GrupoGanadero;
@@ -38,8 +40,14 @@ public class SistemaGanadero {
 		Condicion cond3 = new Genero("male");
 		
 		Clasificacion c1 = new Clasificacion("Machos", cond3);
-		Clasificacion c1 = new Clasificacion("Gordos", cond2);
-		Clasificacion c1 = new Clasificacion("Argentas", cond1);
+		Clasificacion c2 = new Clasificacion("Gordos", cond2);
+		Clasificacion c3 = new Clasificacion("Argentas", cond1);
+		
+		SistemaGanadero.addClasificacion(c1);
+		SistemaGanadero.addClasificacion(c2);
+		SistemaGanadero.addClasificacion(c3);
+		
+	//System.out.println(SistemaGanadero.getClasificacion(vaca1));
 		
 		GrupoGanadero rodeo1 = new GrupoGanadero("Rodeo");
 		
@@ -57,8 +65,17 @@ public class SistemaGanadero {
 		Condicion edadMayorA = new EdadMayor(2);
 		Camion camion1 = new Camion(2, edadMayorA); 
 		
+		estancia.printArray();
 		estancia.llenarCamion(camion1);
 		camion1.printArray();
+		estancia.printArray();
+		
+		
+		
+		CondicionGrupal promedioPeso = new PromedioPesoMayor(2);
+		if (estancia.puedeVender(promedioPeso)){
+			System.out.println("Puede vender");
+		}
 		
 	}
 	
