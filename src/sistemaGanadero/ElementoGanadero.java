@@ -8,7 +8,7 @@ import TPE.Camion;
 		
 		public abstract int getCantidadAnimales();
 		
-		public abstract double getPromedioEdad();
+		public abstract double edadTotal();
 		
 		public abstract double getPeso();
 		

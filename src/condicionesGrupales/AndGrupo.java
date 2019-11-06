@@ -13,6 +13,6 @@ import sistemaGanadero.GrupoGanadero;
 		}
 		public boolean cumple(GrupoGanadero r) {
 			
-			return c1.cumple(r)&&c1.cumple(r);
+			return c1.cumple(r)&&c2.cumple(r);
 		}
 	}

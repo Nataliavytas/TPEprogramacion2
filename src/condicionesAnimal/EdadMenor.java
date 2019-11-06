@@ -12,7 +12,7 @@ public class EdadMenor implements Condicion{
 
 	public boolean cumple(Animal a) {
 		
-		return (a.getPromedioEdad() < comparador);
+		return (a.edadTotal() < comparador);
 	}
 
 }

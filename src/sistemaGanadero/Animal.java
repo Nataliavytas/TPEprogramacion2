@@ -33,7 +33,7 @@ import condicionesAnimal.Condicion;
 			genero = ge;
 		}
 
-		public double getPromedioEdad() {
+		public double edadTotal() {
 			return edad;
 		}
 	
@@ -68,14 +68,14 @@ import condicionesAnimal.Condicion;
 			return raza;
 		}
 		public boolean isCapado() {
-			if(genero.equalsIgnoreCase("hembra"))
+			if(genero.equalsIgnoreCase("female"))
 				return false;
 			else {
 				return capado;
 			}
 		}
 		public int getPariciones() {
-			if(genero.equalsIgnoreCase("macho"))
+			if(genero.equalsIgnoreCase("male"))
 				return 0;
 			else {
 				return pariciones;
@@ -110,11 +110,7 @@ import condicionesAnimal.Condicion;
 		}
 		
 		public void printArray(){
-			System.out.println(id + " ");
-		}
-		
-		public String toString() {
-			return "animal :" + id;
+			System.out.println("vaca "+ id + " ");
 		}
 		
 	}

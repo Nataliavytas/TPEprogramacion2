@@ -29,15 +29,16 @@ import java.util.Iterator;
 			return cantidad; 
 		}
 	
-		public double getPromedioEdad() {
+		public double edadTotal(){
 			double sumaEdades = 0;
 			
-				for(ElementoGanadero e: elementos){
-					
-					sumaEdades += e.getPromedioEdad();
-				}
-				
-			return (sumaEdades/getCantidadAnimales());
+			for(ElementoGanadero e: elementos){
+				sumaEdades += e.edadTotal();
+			}
+			return sumaEdades;
+		}
+		public double getPromedioEdad() {
+			return (edadTotal()/getCantidadAnimales());
 		}
 	
 		public double getPeso() {
@@ -60,15 +61,15 @@ import java.util.Iterator;
 			return 	g.cumple(this);
 		} 
 		
-		public void llenarCamion(Camion f){
+		public void llenarCamion(Camion c){
 		
 			Iterator<ElementoGanadero> it = elementos.iterator();
-			while (it.hasNext() && !f.isFull()){
+			while (it.hasNext() && !c.isFull()){
 				ElementoGanadero e1 = it.next();
-				e1.llenarCamion(f);
+				e1.llenarCamion(c);
 			}
 			
-			ArrayList<Animal> borrar = f.getAnimales();
+			ArrayList<Animal> borrar = c.getAnimales();
 			for (Animal a : borrar)
 				deleteAnimales(a);
 		}
