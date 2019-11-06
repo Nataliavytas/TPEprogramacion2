@@ -12,7 +12,7 @@ import sistemaGanadero.Animal;
 	
 		public boolean cumple(Animal a) {
 			
-			return (a.getPromedioEdad() == comparador);
+			return (a.edadTotal() == comparador);
 		}
 	
 	}
