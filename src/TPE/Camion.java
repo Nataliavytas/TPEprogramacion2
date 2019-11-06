@@ -8,12 +8,16 @@ import sistemaGanadero.Animal;
 public class Camion {
 	private int capacidad; 
 	private Condicion condicion;
-	public ArrayList<Animal> animales;
+	private ArrayList<Animal> animales;
 	
 	public Camion (int ca, Condicion co){
 		capacidad = ca;
 		condicion = co; 
 		animales = new ArrayList<Animal>();
+	}
+	
+	public ArrayList<Animal> getAnimales(){
+		return animales;
 	}
 	
 	public Condicion getCondicion(){
@@ -26,10 +30,9 @@ public class Camion {
 	
 	public void addAnimal(Animal animalAgregar){
 		if(condicion.cumple(animalAgregar)&&(animales.size()<capacidad)){
-			
 			animales.add(animalAgregar);
-			animalAgregar.deleteAnimal();
 		}
+		
 	}
 	
 	public boolean isFull(){
@@ -38,7 +41,8 @@ public class Camion {
 	
 	public void printArray(){
 		for(Animal a:animales){
-			a.toString();
+			System.out.println(a.getId()+ " ");
+
 		}
 	}
 }

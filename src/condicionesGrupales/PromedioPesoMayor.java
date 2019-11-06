@@ -12,7 +12,7 @@ import sistemaGanadero.GrupoGanadero;
 			}
 			
 			public boolean cumple(GrupoGanadero r) {
-				return r.getPromedioEdad() > comparador;
+				return r.getPromedioPeso() > comparador;
 			}
 			
 		}
